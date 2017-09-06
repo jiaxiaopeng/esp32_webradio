@@ -61,6 +61,9 @@ static esp_err_t event_handler(void *ctx, system_event_t *event)
 
 
 void event_engine_init(){
+    station_event_group = xEventGroupCreate();
+    ap_event_group = xEventGroupCreate();
+    eth_event_group = xEventGroupCreate();
 	esp_event_loop_init(event_handler,NULL);
 }
 
